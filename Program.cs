@@ -145,48 +145,45 @@
 
 // Итоговая задача. «Угадай число»
 
-// int secret = 42;
-// Console.WriteLine("В программе загадано число. У вас есть 5 попыток, чтобы его отгадать. Желаю удачи!");
+int secret = 42;
+Console.WriteLine("В программе загадано число. У вас есть 5 попыток, чтобы его отгадать. Желаю удачи!");
+for (int i = 1; i <= 5; i++)
+{
+    Console.Write("Введите свое число: ");
+    int userSecret = int.Parse(Console.ReadLine());
+    if (userSecret > secret)
+    {
+        Console.WriteLine("Ваше число больше");
+    }
+    else if (userSecret < secret)
+    {
+        Console.WriteLine("Ваше число меньше");
+    }
+    if (userSecret == secret)
+    {
+        Console.WriteLine($"Вы угадали число за {i} попыток. Мое число было: {secret}");
+        break;
+    }
 
-// for (int i = 1; i <= 5; i++)
-// {
-//     Console.Write("Введите свое число: ");
-//     int userSecret = int.Parse(Console.ReadLine());
-//     if (userSecret > secret)
-//     {
-//         Console.WriteLine("Ваше число больше");
-//         i++;
-//     }
-//     else if (userSecret < secret)
-//     {
-//         Console.WriteLine("Ваше число меньше");
-//         i++;
-//     }
-//     if (userSecret == secret)
-//     {
-//         Console.WriteLine($"Вы угадали число за {i-1} попыток. Мое число было: {secret}");
-//         break;
-//     }
+    if (i == 5)
+    {
+        Console.WriteLine($"Вы проиграли. Мое число было: {secret}. Кол-во попыток {i}"); 
+        break;   
+    }
 
-//     if (i > 5)
-//     {
-//         Console.WriteLine($"Вы проиграли. Мое число было: {secret}. Кол-во попыток {i}"); 
-//         break;   
-//     }
-
-// }
+}
 
 // Дополнительное задание ★★★
 
-Console.Write("Введите число: ");
-int n = int.Parse(Console.ReadLine());
-int sum = 0;
-int count = 0;
-while(n > 0)
-{
-    sum += n % 10;
-    count++;
-    n = n / 10;
-}
-Console.WriteLine($"Сумма цифр: {sum}");
-Console.WriteLine($"Количество цифр {count}");
+// Console.Write("Введите число: ");
+// int n = int.Parse(Console.ReadLine());
+// int sum = 0;
+// int count = 0;
+// while(n > 0)
+// {
+//     sum += n % 10;
+//     count++;
+//     n = n / 10;
+// }
+// Console.WriteLine($"Сумма цифр: {sum}");
+// Console.WriteLine($"Количество цифр {count}");
